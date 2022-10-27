@@ -16,10 +16,10 @@
 
 <body>
     <!-- menu inicio -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark py-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="img/logo-pandora.png" alt="Logo" width="30" height="32" class="d-inline-block align-text-top">
+                <img src="img/logo-pandora.png" alt="Logo" width="50" height="52" class="d-inline-block align-text-center">
                 PandoraBox
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -28,10 +28,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link active me-2" aria-current="page" href="index.html">HOME</a>
+                    <a class="nav-link" href="blog.html">BLOG</a>
                 </div>
             </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-b">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
         </div>
     </nav>
     <!-- menu fim -->
@@ -49,14 +53,14 @@
             <div class="carousel-item active">
                 <img src="img/car-01.jpg" class="d-block w-100" alt="..." id="car">
                 <div class="carousel-caption d-none d-md-block" id="car-t">
-                    <h5>LibraTour!</h5>
+                    <h3>LibraTour!</h3>
                     <p>O novo projeto da PandoraBox, LibraTour, está disponível agora para todos computadores!</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="img/car-02.jpg" class="d-block w-100" alt="..." id="car">
                 <div class="carousel-caption d-none d-md-block" id="car-t">
-                    <h5>LibraTour: Atualizações!</h5>
+                    <h3>LibraTour: Atualizações!</h3>
                     <p>O jogo agora está com novas fases e mais ferramentas para seu aprendizado! Descubra como guiar as
                         experiências de todos com inclusão e conforto.</p>
                 </div>
@@ -64,7 +68,7 @@
             <div class="carousel-item">
                 <img src="img/car-03.jpg" class="d-block w-100" alt="..." id="car">
                 <div class="carousel-caption d-none d-md-block" id="car-t">
-                    <h5>PandoraBox: Novos Recursos!</h5>
+                    <h3>PandoraBox: Novos Recursos!</h3>
                     <p>O site da equipe ganhou novas funções e atualizações, tudo para garantir uma experiência mais
                         confortável a todos.</p>
                 </div>
@@ -85,7 +89,7 @@
     <!-- conteudo inicio -->
     <br><br>
     <center>
-        <h1>Quem Somos</h1>
+        <h1>QUEM SOMOS</h1>
     </center>
     <br>
     <h4 id="text-jus">O PandoraBox é um grupo criado em 2022 a partir da reunião de cinco desenvolvedores em
@@ -95,24 +99,79 @@
         Andres A., Oliveira A., Almeida C., Souza F. e Almeida L.</h4>
     <br>
     <br>
-    <img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25 d-inline" alt="..." id="pessoas">
-    <img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25 d-inline" alt="..." id="pessoas">
-    <img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25 d-inline" alt="..." id="pessoas">
-    <img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25 d-inline" alt="..." id="pessoas">
-    <img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25 d-inline" alt="..." id="pessoas">
-    <h4 id="text" class="d-inline">Texto foda</h4>
-    <h4 id="text" class="d-inline">Texto foda</h4>
-    <h4 id="text" class="d-inline">Texto foda</h4>
-    <h4 id="text" class="d-inline">Texto foda</h4>
-    <h4 id="text" class="d-inline">Texto foda</h4>
+    <table>
+        <tr>
+            <td><img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25" alt="..." id="pessoas"></td>
+            <td><img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25" alt="..." id="pessoas"></td>
+            <td><img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25" alt="..." id="pessoas"></td>
+            <td><img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25" alt="..." id="pessoas"></td>
+            <td><img src="img/logo-libra.png" class="rounded-pill border border-success p-2 mb-2 border-opacity-25" alt="..." id="pessoas"></td>
+        </tr>
+        <tr>
+            <td><h4 id="text">Andres A.</h4></td>
+            <td><h4 id="text">Oliveira A.</h4></td>
+            <td><h4 id="text">Almeida C.</h4></td>
+            <td><h4 id="text">Souza F.</h4></td>
+            <td><h4 id="text">Almeida L.</h4></td>
+        </tr>
+    </table>
     <!-- servicos inicio -->
     <br><br>
     <hr><br>
     <center>
-        <h1>Serviços</h1>
+        <h1>SERVIÇOS</h1>
+    </center>
+    <br><br>
+    <div id="services" class="container-fluid text-center">
+        <div class="row slideanim">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-off logo-small"><img src="img/icon-design.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4>DESIGN DIGITAL</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-heart logo-small"><img src="img/icon-html.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4>HTML, CSS</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-lock logo-small"><img src="img/icon-js.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4>JAVASCRIPT</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+        </div>
+        <br><br>
+        <div class="row slideanim">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf logo-small"><img src="img/icon-php.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4>PHP</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-certificate logo-small"><img src="img/icon-bd.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4>BANCO DE DADOS</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench logo-small"><img src="img/icon-manutencao.png" alt="Logo" width="80vw" height="80vw"></span>
+            <h4 style="color:#303030;">MANUNTENÇÃO</h4>
+            <p>Lorem ipsum dolor sit amet..</p>
+          </div>
+        </div>
+      </div>
+    <!-- servico fim -->
+    <!-- atualizacoes inicio -->
+    <!-- linkar redes sociais -->
+    <!-- atualizacoes fim -->
+    <!-- outros projetos inicio -->
+    <br><br>
+    <hr><br>
+    <center>
+        <h1>PORTFÓLIO</h1>
     </center>
     <br>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+      <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card text-bg-secondary mb-3 h-100">
                 <img src="img/ser-01.jpg" class="card-img-top" alt="...">
@@ -154,11 +213,6 @@
             </div>
         </div>
     </div>
-    <!-- servico fim -->
-    <!-- atualizacoes inicio -->
-    <!-- linkar redes sociais -->
-    <!-- atualizacoes fim -->
-    <!-- outros projetos inicio -->
     <!-- outros projetos fim -->
     <!-- footer -->
 </body>

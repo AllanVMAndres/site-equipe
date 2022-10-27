@@ -17,10 +17,27 @@
     text-align: center;
 }
 
-#pessoas{
-    margin-left: 0.7%;
+table{
+    margin:auto;
 }
 
-#text{
-    margin-left: 10%;
+td{
+    padding: 5px;
+}
+
+td #text{
+    text-align: center;
+}
+
+#pessoas{
+    width: 15vw;
+}
+
+#search-b{
+    transition: all 0.5s;
+}
+
+#search-b:hover{
+    width: 15vw;
+    padding-right: 105px;
 }
