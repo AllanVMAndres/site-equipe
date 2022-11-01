@@ -22,7 +22,7 @@ table{
 }
 
 td{
-    padding: 5px;
+    padding: 1.35vw;
 }
 
 td #text{
@@ -40,4 +40,13 @@ td #text{
 #search-b:hover{
     width: 15vw;
     padding-right: 105px;
+}
+
+#serv{
+    background-image: url('../img/bg-serv-3.jpg');
+    background-color: #000000cb;
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
