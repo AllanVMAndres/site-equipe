@@ -48,5 +48,42 @@ td #text{
     background-blend-mode: darken;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: #ffffff;
+}
+
+#atu-img{
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+}
+
+#btn-atu{
+    margin-inline: 5.5vw;
+}
+
+#atu{
+    background-image: url('../img/bg-atu.jpg');
+    background-color: #000000cb;
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+#foot-icon{
+    width: 2vw;
+    height: 2vw;
+    object-fit: contain;
+}
+
+#foot-icon-2{
+    width: 2vw;
+    height: 2vw;
+    object-fit: contain;
+    margin: 0.25vw;
+}
+
+#foot{
+    width: 4.5vw;
+    padding-right: 1vw; 
 }
