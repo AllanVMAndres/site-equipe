@@ -43,7 +43,7 @@ td #text{
 }
 
 #serv{
-    background-image: url('../img/bg-serv-3.jpg');
+    background-image: url('../img/bg-serv.jpg');
     background-color: #000000cb;
     background-blend-mode: darken;
     background-repeat: no-repeat;
@@ -86,4 +86,8 @@ td #text{
 #foot{
     width: 4.5vw;
     padding-right: 1vw; 
+}
+
+#text-port{
+    font-size: larger;
 }
