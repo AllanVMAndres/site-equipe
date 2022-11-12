@@ -53,29 +53,22 @@
         aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner" id="car-box">
-      <div class="carousel-item active">
-        <img src="img/car-01.jpg" class="d-block w-100" alt="..." id="car">
-        <div class="carousel-caption d-none d-md-block" id="car-t">
-          <h3>LibraTour!</h3>
-          <p>O novo projeto da PandoraBox, LibraTour, está disponível agora para todos computadores!</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/car-02.jpg" class="d-block w-100" alt="..." id="car">
-        <div class="carousel-caption d-none d-md-block" id="car-t">
-          <h3>LibraTour: Atualizações!</h3>
-          <p>O jogo agora está com novas fases e mais ferramentas para seu aprendizado! Descubra como guiar as
-            experiências de todos com inclusão e conforto.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/car-03.jpg" class="d-block w-100" alt="..." id="car">
-        <div class="carousel-caption d-none d-md-block" id="car-t">
-          <h3>PandoraBox: Novos Recursos!</h3>
-          <p>O site da equipe ganhou novas funções e atualizações, tudo para garantir uma experiência mais
-            confortável a todos.</p>
-        </div>
-      </div>
+      <?php
+
+      include("conexao.php");
+
+      $q1 = mysqli_query($conexao,"SELECT * FROM carroussel ORDER BY id_car;");
+
+      while($e1 = mysqli_fetch_array($q1)){
+        echo '<div class="carousel-item active">'.
+        '<img src="img/'. $e1[3] .'" class="d-block w-100" alt="..." id="car">'.
+        '<div class="carousel-caption d-none d-md-block" id="car-t">'.
+          '<h3>'. $e1[1] .'</h3>'.
+          '<p>'. $e1[2] .'</p>'.
+        '</div>'.
+      '</div>';
+      }
+      ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,58 +82,47 @@
   <!-- carroussel fim -->
   <!-- conteudo inicio -->
   <br><br>
-  <center>
-    <h1 id="sobre">QUEM SOMOS</h1>
-  </center>
-  <br>
-  <h4 id="text-jus">O PandoraBox é um grupo criado em 2022 a partir da reunião de cinco desenvolvedores em
-    treinamento, que tinham
-    como intuito desenvolver um projeto tecnológico. Atualmente o grupo se mantém no ramo tecnológico e conta com
-    todos seus participantes originais, sendo eles:
-    Andres A., Oliveira A., Almeida C., Souza F. e Almeida L.</h4>
-  <br>
-  <br>
-  <table>
-    <tr>
-      <td><img src="img/grupo-allan.jpeg" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
-          id="pessoas"></td>
-      <td><img src="img/grupo-andre.jpeg" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
-          id="pessoas"></td>
-      <td><img src="img/grupo-carlos.jpeg" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
-          id="pessoas"></td>
-      <td><img src="img/grupo-felipe.jpg" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
-          id="pessoas"></td>
-      <td><img src="img/grupo-luiz.jpeg" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
-          id="pessoas"></td>
-    </tr>
-    <tr>
-      <td>
-        <h4 id="text">Andres A.</h4>
-      </td>
-      <td>
-        <h4 id="text">Oliveira A.</h4>
-      </td>
-      <td>
-        <h4 id="text">Almeida C.</h4>
-      </td>
-      <td>
-        <h4 id="text">Souza F.</h4>
-      </td>
-      <td>
-        <h4 id="text">Almeida L.</h4>
-      </td>
-    </tr>
-  </table>
+  <?php 
+
+  $q2 = mysqli_query($conexao,"SELECT * FROM conteudo WHERE id_cont = 1;");
+  $e2 = mysqli_fetch_array($q2);
+  $q3 = mysqli_query($conexao,"SELECT membro.cod_mem, membro.nome_mem, membro.nome_img_mem FROM membro INNER JOIN conteudo ON membro.id_cont = conteudo.id_cont ORDER BY membro.cod_mem;");
+
+  echo '<center>'.
+    '<h1 id="sobre">'. $e2[1] .'</h1>'.
+  '</center>'.
+  '<br>'.
+  '<h4 id="text-jus">'. $e2[2] .'</h4>'.
+  '<br>'.
+  '<br>'.
+  '<table>'.
+  '<tr>';
+
+    while($e3 = mysqli_fetch_array($q3)){
+      echo '<td><img src="img/'. $e3[2] .'" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
+          id="pessoas"><br><h4 id="text">'. $e3[1] .'</h4></td>';
+    }
+    
+    echo '</tr>'.
+    '<tr>'.
+  '</table>';
+  ?>
   <!-- servicos inicio -->
   <br><br>
   <div id="serv">
     <hr><br>
-    <center>
-      <h1 id="servicos">SERVIÇOS</h1>
-    </center>
-    <br><br>
+    <?php
 
-    <div id="services" class="container-fluid text-center">
+    $q4 = mysqli_query($conexao,"SELECT * FROM conteudo WHERE id_cont = 2;");
+    $e4 = mysqli_fetch_array($q4);
+    $q5 = mysqli_query($conexao,"SELECT servico.* FROM servico INNER JOIN conteudo ON servico.id_cont = conteudo.id_cont ORDER BY servico.id_serv;");
+
+    echo '<center>'.
+      '<h1 id="servicos">'. $e4[1] .'</h1>'.
+    '</center>'.
+    '<br><br>'.
+    '<div id="services" class="container-fluid text-center">';
+      
       <div class="row slideanim">
         <div class="col-sm-4">
           <span class="glyphicon glyphicon-off logo-small"><img src="img/icon-design.png" alt="Logo" width="80vw"
@@ -183,6 +165,7 @@
         </div>
       </div>
     </div>
+    ?>
     <!-- servico fim -->
     <!-- outros projetos inicio -->
     <br><br>
