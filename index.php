@@ -60,13 +60,13 @@
       $q1 = mysqli_query($conexao,"SELECT * FROM carroussel ORDER BY id_car;");
 
       while($e1 = mysqli_fetch_array($q1)){
-        echo '<div class="carousel-item active">'.
-        '<img src="img/'. $e1[3] .'" class="d-block w-100" alt="..." id="car">'.
-        '<div class="carousel-caption d-none d-md-block" id="car-t">'.
-          '<h3>'. $e1[1] .'</h3>'.
-          '<p>'. $e1[2] .'</p>'.
-        '</div>'.
-      '</div>';
+        echo '<div class="carousel-item active">
+        <img src="img/'. $e1[3] .'" class="d-block w-100" alt="..." id="car">
+        <div class="carousel-caption d-none d-md-block" id="car-t">
+          <h3>'. $e1[1] .'</h3>
+          <p>'. $e1[2] .'</p>
+        </div>
+        </div>';
       }
       ?>
     </div>
@@ -88,24 +88,24 @@
   $e2 = mysqli_fetch_array($q2);
   $q3 = mysqli_query($conexao,"SELECT membro.cod_mem, membro.nome_mem, membro.nome_img_mem FROM membro INNER JOIN conteudo ON membro.id_cont = conteudo.id_cont ORDER BY membro.cod_mem;");
 
-  echo '<center>'.
-    '<h1 id="sobre">'. $e2[1] .'</h1>'.
-  '</center>'.
-  '<br>'.
-  '<h4 id="text-jus">'. $e2[2] .'</h4>'.
-  '<br>'.
-  '<br>'.
-  '<table>'.
-  '<tr>';
+  echo '<center>
+    <h1 id="sobre">'. $e2[1] .'</h1>
+  </center>
+  <br>
+  <h4 id="text-jus">'. $e2[2] .'</h4>
+  <br>
+  <br>
+  <table>
+  <tr>';
 
     while($e3 = mysqli_fetch_array($q3)){
       echo '<td><img src="img/'. $e3[2] .'" class="rounded-pill border border-dark p-2 mb-2 border-opacity-25" alt="..."
           id="pessoas"><br><h4 id="text">'. $e3[1] .'</h4></td>';
     }
     
-    echo '</tr>'.
-    '<tr>'.
-  '</table>';
+    echo '</tr>
+    <tr>
+    </table>';
   ?>
   <!-- servicos inicio -->
   <br><br>
@@ -116,55 +116,56 @@
     $q4 = mysqli_query($conexao,"SELECT * FROM conteudo WHERE id_cont = 2;");
     $e4 = mysqli_fetch_array($q4);
     $q5 = mysqli_query($conexao,"SELECT servico.* FROM servico INNER JOIN conteudo ON servico.id_cont = conteudo.id_cont ORDER BY servico.id_serv;");
+    $e5 = mysqli_fetch_array($q5);
 
-    echo '<center>'.
-      '<h1 id="servicos">'. $e4[1] .'</h1>'.
-    '</center>'.
-    '<br><br>'.
-    '<div id="services" class="container-fluid text-center">';
-      
-      <div class="row slideanim">
+    echo '<center>
+      <h1 id="servicos">'. $e4[1] .'</h1>
+    </center>
+    <br><br>
+    <div id="services" class="container-fluid text-center">'.
+
+      '<div class="row slideanim">
         <div class="col-sm-4">
-          <span class="glyphicon glyphicon-off logo-small"><img src="img/icon-design.png" alt="Logo" width="80vw"
+          <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
               height="80vw"></span>
-          <h4>DESIGN DIGITAL</h4>
-          <p>Desenvolvimento de designs para sites, logos, etc.</p>
+          <h4>'. $e5[1] .'</h4>
+          <p>'. $e5[2] .'</p>
         </div>
         <div class="col-sm-4">
-          <span class="glyphicon glyphicon-heart logo-small"><img src="img/icon-html.png" alt="Logo" width="80vw"
+          <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
               height="80vw"></span>
-          <h4>HTML, CSS</h4>
-          <p>Programação de sites para web em HTML e CSS.</p>
+          <h4>'. $e5[1] .'</h4>
+          <p>'. $e5[2] .'</p>
         </div>
         <div class="col-sm-4">
-          <span class="glyphicon glyphicon-lock logo-small"><img src="img/icon-js.png" alt="Logo" width="80vw"
+          <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
               height="80vw"></span>
-          <h4>JAVASCRIPT</h4>
-          <p>Programação de sites para web em JavaScript.</p>
+          <h4>'. $e5[1] .'</h4>
+          <p>'. $e5[2] .'</p>
         </div>
       </div>
       <br><br>
       <div class="row slideanim">
         <div class="col-sm-4">
-          <span class="glyphicon glyphicon-leaf logo-small"><img src="img/icon-php.png" alt="Logo" width="80vw"
-              height="80vw"></span>
-          <h4>PHP</h4>
-          <p>Programação de sites para web em PHP.</p>
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-certificate logo-small"><img src="img/icon-bd.png" alt="Logo" width="80vw"
-              height="80vw"></span>
-          <h4>BANCO DE DADOS</h4>
-          <p>Desenvolvimento de Banco de Dados para sites e softwares.</p>
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-wrench logo-small"><img src="img/icon-manutencao.png" alt="Logo" width="80vw"
-              height="80vw"></span>
-          <h4>MANUNTENÇÃO</h4>
-          <p>Manuntenção e implementação de sites e softwares.</p>
-        </div>
+          <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
+          height="80vw"></span>
+        <h4>'. $e5[1] .'</h4>
+        <p>'. $e5[2] .'</p>
       </div>
-    </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
+        height="80vw"></span>
+        <h4>'. $e5[1] .'</h4>
+        <p>'. $e5[2] .'</p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-off logo-small"><img src="img/'. $e5[3] .'" alt="Logo" width="80vw"
+        height="80vw"></span>
+      <h4>'. $e5[1] .'</h4>
+      <p>'. $e5[2] .'</p>
+      </div>
+      </div>
+    </div>';
     ?>
     <!-- servico fim -->
     <!-- outros projetos inicio -->
@@ -172,8 +173,15 @@
     <hr>
   </div>
   <br id="port">
-  <center>
-    <h1>PORTFÓLIO</h1>
+  <?php 
+
+  $q6 = mysqli_query($conexao,"SELECT * FROM conteudo WHERE id_cont = 3;");
+  $e6 = mysqli_fetch_array($q6);
+  $q7 = mysqli_query($conexao,"SELECT imgprojeto.*, projeto.* FROM projeto INNER JOIN  ;");
+  $e7 = mysqli_fetch_array($q4);
+
+  echo '<center>
+    <h1>'. $e6[1] .'</h1>
   </center>
   <br>
   <div class="card mb-3" style="max-width: 100%;">
@@ -182,10 +190,10 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/port-1.jpg" class="d-block w-100" alt="...">
+              <img src="img/'.port-1.jpg.'" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="img/port-2.jpg" class="d-block w-100" alt="...">
+              <img src="img/'.port-2.jpg.'" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
               <img src="img/port-3.jpg" class="d-block w-100" alt="...">
@@ -220,7 +228,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>'
+  ?>
   <!-- outros projetos fim -->
   <!-- atualizacoes inicio -->
   <br><br>
